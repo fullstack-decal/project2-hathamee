@@ -55,11 +55,15 @@ Hint: We need:
           //make functionality for symbol = Hint: use operator variable. Also call a function we created already!
           if (symbol === "C") {
                 total = 0;
-                // strbuffer = "0";
+                strbuffer = "0";
                 operator = "";
           }
           if (symbol === "←") {
-              total /= 10;
+              let len = symbol.length - 1;
+              if (len == "0") {
+                  strbuffer = "0";
+              }
+              strbuffer = strbuffer.substring(0, len);
           }
           if (symbol === "=") {
               calculations();
@@ -68,14 +72,14 @@ Hint: We need:
           }
           else { //make functionality if symbol is an operator
           const intBuffer = parseInt(strbuffer);
-          if (total === 0) {
-              total = intBuffer;
-          } else {
-              calculations();
-          }
-          operator = symbol;
-          strbuffer = "0";
-          }
+            if (total === 0) {
+                total = intBuffer;
+            } else {
+                calculations();
+            }
+            operator = symbol;
+            strbuffer = "0";
+            }
       }
 
       /*  FUNC DESCRIPTION: Write the function to set listeners. This is how we will make the HTML interactive with the JS!
