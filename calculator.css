@@ -38,9 +38,9 @@
   height: 85%;
 }
 #last-buttons {
-  background-color: #df974c;
+  background-color: rgb(165, 165, 177);
   color: white;
 }
 #last-buttons:hover {
-  background-color: #dfb07e;
+  background-color:lavender;
 }

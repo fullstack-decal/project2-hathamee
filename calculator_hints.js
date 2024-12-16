@@ -10,29 +10,42 @@ Hint: We need:
       (2) the string value that is shown on the display screen
       (3) the operator (+, x, -, and ÷) that is selected.  */
 
-      let total = ________;
-      let strbuffer = ________;
-      let operator = _______;
+      let total = 0;
+      let strbuffer = "0";
+      let operator = "";
 
       /*  FUNC DESCRIPTION: Operator calculations. Create the in +, x, -, and ÷ operator calculations. The plus operator is done for you!
           Uncomment and fill in the blank spaces. */
       function calculations() {
-          const intBuffer = _________; // Hint: Use parseInt to convert string to integer
+          const intBuffer = parseInt(strbuffer); // Hint: Use parseInt to convert string to integer
           if (operator === "+") {
               total += intBuffer;
           }
           //ADD THE OTHER OPERATORS
+          if (operator === "-") {
+            total -= intBuffer;
+        }
+        if (operator === "x") {
+            total *= intBuffer;
+        }
+        if (operator === "÷") {
+            total /= intBuffer;
+        }
+        if (operator === "C") {
+            total = 0;
+            strbuffer = "0";
+        }
       }
 
       /*   FUNC DESCRIPTION: If user input is a number, create the function. */
       function makesNumber(value) {
           if (strbuffer === "0") {
-              strbuffer = _______;
+              strbuffer = value;
           } else {
           /*  If strbuffer is not 0, meaning there is a previous number typed in already, what should we display on the screen?
           Hint: How do we concatenate strings? If you are stuck, imagine typing in a "5" into the calculator, making strbuffer into "5". 
           Then imagine typing "3" into the calculator. Now "3" is value and strbuffer is still at "5", so strbuffer will now be 53.  */
-              ____________________
+              strbuffer = strbuffer - strbuffer + value;
           }
       }
 
